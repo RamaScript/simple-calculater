@@ -1,4 +1,5 @@
 let input = document.querySelector("#inpBox");
+let res = document.querySelector("#result");
 let btns = document.querySelectorAll("button");
 
 btns.forEach((btn) => {
@@ -58,6 +59,7 @@ function handleInput(value) {
       break;
     default:
       input.value += value;
+      autoEvaluate();
   }
 }
 
@@ -65,6 +67,7 @@ function evaluateExpression() {
   try {
     let result = eval(input.value);
     input.value = result;
+    res.value = "";
   } catch {
     input.value = "Error";
   }
@@ -72,8 +75,22 @@ function evaluateExpression() {
 
 function clearInput() {
   input.value = "";
+  res.value="";
 }
 
 function deleteLastCharacter() {
   input.value = input.value.slice(0, -1);
+  autoEvaluate();
+}
+
+function autoEvaluate(){
+  try{
+    let result = eval(input.value);
+    res.value = result;
+    if(res.value == "undefined"){
+      res.value = "";
+    }
+  }catch{
+    res.value = "";
+  }
 }

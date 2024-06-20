@@ -25,10 +25,17 @@ body{
     box-shadow: 0px 3px 15px rgba(113, 115, 119,0.5);
 }
 
-input{
+.inpBoxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inpBox{
     width: 320px;
     border: none;
-    padding: 24px;
+    padding: 24px 24px 0px 0px;
     margin: 10px;
     background: transparent;
     /* box-shadow: 0px 3px 15px rgba(84,84,84,0.1); */
@@ -39,6 +46,21 @@ input{
     border-radius: 20px;
     pointer-events: none;
    
+}
+
+#result{
+    width: 320px;
+    border: none;
+    padding: 0px 24px;
+    /* margin: 10px; */
+    background: transparent;
+    /* box-shadow: 0px 3px 15px rgba(84,84,84,0.1); */
+    font-size: 30px;
+    text-align: right;
+    cursor: pointer;
+    color: rgba(255, 255, 255,0.5);
+    border-radius: 20px;
+    pointer-events: none;
 }
 
 input::placeholder{
